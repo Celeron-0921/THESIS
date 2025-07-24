@@ -1,14 +1,14 @@
 const express = require('express');
-const app = express();
 const pool = require('../db/mysql');
+const app = express();
 
 app.use(express.json());
 
-app.get('/api/hello', (req, res) => {
+app.get('/hello', (req, res) => {
   res.json({ message: '🚀 Vercel Express is working!' });
 });
 
-app.get('/api/users', async (req, res) => {
+app.get('/users', async (req, res) => {
   try {
     const [rows] = await pool.query('SELECT * FROM users');
     res.json({ users: rows });
@@ -17,4 +17,4 @@ app.get('/api/users', async (req, res) => {
   }
 });
 
-module.exports = app; // <-- this is required for Vercel to work
+module.exports = app;

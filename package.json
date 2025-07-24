@@ -4,7 +4,7 @@
   "main": "api/index.js",
   "scripts": {
     "start": "node api/index.js",
-    "vercel-build": "echo 'no build needed'"
+    "vercel-build": "echo \"no build needed\""
   },
   "keywords": [],
   "author": "",
